@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:sorteio_app/core/styles/colors_app.dart';
+
 class ElevatedbuttonWidgets extends StatefulWidget {
   const ElevatedbuttonWidgets({super.key});
 
@@ -21,9 +23,11 @@ class _ElevatedbuttonWidgetsState extends State<ElevatedbuttonWidgets> {
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 elevation: 10,
-                backgroundColor: const Color(0xFFcd9f5a),
+                backgroundColor: context.colors.tertiary,
               ),
-              onPressed: () {},
+              onPressed: () {
+                print('Sorteado');
+              },
               child: const Text(
                 'Sorteiar',
                 style: TextStyle(

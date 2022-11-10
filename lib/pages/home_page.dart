@@ -17,7 +17,6 @@ class _HomePageState extends State<HomePage> {
       body: Stack(
         alignment: Alignment.center,
         children: [
-          const GridviewWidgets(),
           const ElevatedbuttonWidgets(),
           SizedBox(
             width: MediaQuery.of(context).size.width,
@@ -75,6 +74,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
+                const GridviewWidgets(),
               ],
             ),
           ),
