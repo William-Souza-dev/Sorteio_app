@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'package:sorteio_app/core/styles/colors_app.dart';
 import 'package:sorteio_app/core/widgets/elevatedbutton_widgets.dart';
 import 'package:sorteio_app/core/widgets/gridview_widgets.dart';
 

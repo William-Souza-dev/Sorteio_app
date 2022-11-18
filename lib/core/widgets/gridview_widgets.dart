@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:sorteio_app/core/styles/colors_app.dart';
+import 'package:sorteio_app/core/widgets/alertdialog_widgets.dart';
 
 class GridviewWidgets extends StatefulWidget {
   const GridviewWidgets({super.key});
@@ -14,40 +15,7 @@ class _GridviewWidgetsState extends State<GridviewWidgets> {
     showDialog(
         context: context,
         builder: (context) {
-          return AlertDialog(
-            backgroundColor: context.colors.primary,
-            title: const Center(child: Text('Adicionar Nome')),
-            content: Container(
-              height: 700,
-              width: 500,
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(35)),
-              ),
-              child: Column(
-                children: [
-                  TextFormField(
-                    decoration: const InputDecoration(
-                      labelText: 'Informe o nome',
-                      labelStyle: TextStyle(color: Colors.grey, fontSize: 25),
-                      border: OutlineInputBorder(),
-                      icon: Icon(Icons.person_add),
-                    ),
-                  ),
-                  TextFormField(),
-                ],
-              ),
-            ),
-            actions: [
-              MaterialButton(
-                onPressed: () {},
-                child: Text("Adicionar"),
-              ),
-              MaterialButton(
-                onPressed: () {},
-                child: Text("Excluir"),
-              ),
-            ],
-          );
+          return const AlertdialogWidgets();
         });
   }
 
