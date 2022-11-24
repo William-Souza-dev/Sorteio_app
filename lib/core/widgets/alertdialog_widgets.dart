@@ -33,30 +33,37 @@ class _AlertdialogWidgetsState extends State<AlertdialogWidgets> {
             ),
             Padding(
               padding: const EdgeInsets.only(top: 50.0, bottom: 15),
-              child: Container(
+              child: SizedBox(
                 width: MediaQuery.of(context).size.width,
                 height: 100,
-                color: Colors.amber,
-                child: const Text('Nome da Pessoa '),
+                child: const Center(
+                    child: Text(
+                  'Nome da Pessoa ',
+                  style: TextStyle(fontSize: 30),
+                )),
               ),
             ),
-            Container(
+            SizedBox(
               width: MediaQuery.of(context).size.width,
               height: 100,
-              color: Colors.amber,
               child: Column(
                 children: const [
-                  CheckboxWidgets(),
+                  CheckboxWidgets(
+                    title: 'Pendente',
+                  ),
+                  CheckboxWidgets(title: 'Confirmado')
                 ],
               ),
             ),
-            const Spacer(),
-            TextFormField(
-              decoration: const InputDecoration(
-                labelText: 'Informe o nome',
-                labelStyle: TextStyle(color: Colors.grey, fontSize: 25),
-                border: OutlineInputBorder(),
-                icon: Icon(Icons.person_add),
+            Padding(
+              padding: const EdgeInsets.only(top: 30.0),
+              child: TextFormField(
+                decoration: const InputDecoration(
+                  labelText: 'Informe o nome',
+                  labelStyle: TextStyle(color: Colors.grey, fontSize: 25),
+                  border: OutlineInputBorder(),
+                  icon: Icon(Icons.person_add),
+                ),
               ),
             ),
           ],

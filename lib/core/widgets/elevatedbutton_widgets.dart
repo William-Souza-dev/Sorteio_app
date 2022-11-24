@@ -26,7 +26,7 @@ class _ElevatedbuttonWidgetsState extends State<ElevatedbuttonWidgets> {
                 backgroundColor: context.colors.tertiary,
               ),
               onPressed: () {
-                print('Sorteado');
+                Navigator.of(context).pushNamed('/animation');
               },
               child: const Text(
                 'Sorteiar',

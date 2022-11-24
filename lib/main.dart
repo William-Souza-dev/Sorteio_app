@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import 'package:sorteio_app/pages/animation_page.dart';
 import 'package:sorteio_app/pages/home_page.dart';
 import 'package:sorteio_app/pages/splash_page.dart';
 
@@ -18,6 +20,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/splash': (_) => const SplashPage(),
         '/homepage': (_) => const HomePage(),
+        '/animation': (_) => const AnimationPage(),
       },
     );
   }
