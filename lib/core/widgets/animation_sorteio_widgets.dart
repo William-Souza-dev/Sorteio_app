@@ -33,11 +33,7 @@ class _AnimationSorteioWidgetsState extends State<AnimationSorteioWidgets>
 
   flipCard() {
     animation.forward();
-    animation.reset();
-    animation.forward();
-    animation.reset();
-
-    // animation.repeat();
+    animation.repeat();
   }
 
   @override
