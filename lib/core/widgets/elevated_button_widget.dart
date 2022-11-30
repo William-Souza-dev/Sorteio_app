@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 
-import 'package:sorteio_app/core/styles/colors_app.dart';
+import 'package:sorteio_app/core/widgets/animation_sorteio_widget.dart';
 
-class ElevatedbuttonWidgets extends StatefulWidget {
-  const ElevatedbuttonWidgets({super.key});
+import '../styles/colors_app.dart';
+
+class ElevatedButtonWidget extends StatefulWidget {
+  const ElevatedButtonWidget({super.key});
 
   @override
-  State<ElevatedbuttonWidgets> createState() => _ElevatedbuttonWidgetsState();
+  State<ElevatedButtonWidget> createState() => _ElevatedButtonWidgetState();
 }
 
-class _ElevatedbuttonWidgetsState extends State<ElevatedbuttonWidgets> {
+class _ElevatedButtonWidgetState extends State<ElevatedButtonWidget> {
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -26,12 +28,18 @@ class _ElevatedbuttonWidgetsState extends State<ElevatedbuttonWidgets> {
                 backgroundColor: context.colors.tertiary,
               ),
               onPressed: () {
-                Navigator.of(context).pushNamed('/animation');
+                Navigator.of(context).push(
+                  PageRouteBuilder(
+                    opaque: false, // set to false
+                    pageBuilder: (_, __, ___) => AnimationSorteioWidget(),
+                  ),
+                );
               },
-              child: const Text(
-                'Sorteiar',
+              //'/animation'
+              child: Text(
+                'Sortear',
                 style: TextStyle(
-                  color: Colors.black,
+                  color: context.colors.blackfull,
                   fontSize: 25,
                 ),
               ),

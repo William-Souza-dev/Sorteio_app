@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:sorteio_app/core/styles/colors_app.dart';
-import 'package:sorteio_app/core/widgets/elevatedbutton_widgets.dart';
-import 'package:sorteio_app/core/widgets/gridview_widgets.dart';
+import '../core/styles/colors_app.dart';
+import '../core/widgets/elevated_button_widget.dart';
+import '../core/widgets/grid_view_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -18,7 +18,7 @@ class _HomePageState extends State<HomePage> {
       body: Stack(
         alignment: Alignment.center,
         children: [
-          const ElevatedbuttonWidgets(),
+          const ElevatedButtonWidget(),
           SizedBox(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
@@ -75,7 +75,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
-                const GridviewWidgets(),
+                const GridViewWidget(),
               ],
             ),
           ),

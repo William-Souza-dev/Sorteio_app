@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 
-import 'package:sorteio_app/core/styles/colors_app.dart';
+import '../styles/colors_app.dart';
 
-class CheckboxWidgets extends StatefulWidget {
+class CheckboxWidget extends StatefulWidget {
   final String title;
-  const CheckboxWidgets({
+  const CheckboxWidget({
     Key? key,
     required this.title,
   }) : super(key: key);
 
   @override
-  State<CheckboxWidgets> createState() => _CheckboxWidgetsState();
+  State<CheckboxWidget> createState() => _CheckboxWidgetState();
 }
 
-class _CheckboxWidgetsState extends State<CheckboxWidgets> {
+class _CheckboxWidgetState extends State<CheckboxWidget> {
   bool isChecked = false;
 
   @override

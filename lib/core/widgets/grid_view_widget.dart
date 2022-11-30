@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
 
-import 'package:sorteio_app/core/styles/colors_app.dart';
-import 'package:sorteio_app/core/widgets/alertdialog_widgets.dart';
+import '../styles/colors_app.dart';
 
-class GridviewWidgets extends StatefulWidget {
-  const GridviewWidgets({super.key});
+import 'alert_dialog_widget.dart';
+
+class GridViewWidget extends StatefulWidget {
+  const GridViewWidget({super.key});
 
   @override
-  State<GridviewWidgets> createState() => _GridviewWidgetsState();
+  State<GridViewWidget> createState() => _GridViewWidgetState();
 }
 
-class _GridviewWidgetsState extends State<GridviewWidgets> {
+class _GridViewWidgetState extends State<GridViewWidget> {
   void _showDialog() {
     showDialog(
         context: context,
         builder: (context) {
-          return const AlertdialogWidgets();
+          return const AlertDialogWidget();
         });
   }
 
@@ -37,9 +38,9 @@ class _GridviewWidgetsState extends State<GridviewWidgets> {
                 child: Container(
                   width: 5,
                   height: 5,
-                  decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(16)),
-                    color: Color(0xFFe2f2f7),
+                  decoration: BoxDecoration(
+                    borderRadius: const BorderRadius.all(Radius.circular(16)),
+                    color: context.colors.primary,
                   ),
                   child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,

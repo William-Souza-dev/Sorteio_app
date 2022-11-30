@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-import 'package:sorteio_app/core/styles/colors_app.dart';
-import 'package:sorteio_app/core/widgets/checkbox_widgets.dart';
+import '../styles/colors_app.dart';
+import 'package:sorteio_app/core/widgets/checkbox_widget.dart';
 
-class AlertdialogWidgets extends StatefulWidget {
-  const AlertdialogWidgets({super.key});
+class AlertDialogWidget extends StatefulWidget {
+  const AlertDialogWidget({super.key});
 
   @override
-  State<AlertdialogWidgets> createState() => _AlertdialogWidgetsState();
+  State<AlertDialogWidget> createState() => _AlertDialogWidgetState();
 }
 
-class _AlertdialogWidgetsState extends State<AlertdialogWidgets> {
+class _AlertDialogWidgetState extends State<AlertDialogWidget> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
@@ -48,10 +48,10 @@ class _AlertdialogWidgetsState extends State<AlertdialogWidgets> {
               height: 100,
               child: Column(
                 children: const [
-                  CheckboxWidgets(
+                  CheckboxWidget(
                     title: 'Pendente',
                   ),
-                  CheckboxWidgets(title: 'Confirmado')
+                  CheckboxWidget(title: 'Confirmado')
                 ],
               ),
             ),

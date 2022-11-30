@@ -3,15 +3,16 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-class AnimationSorteioWidgets extends StatefulWidget {
-  const AnimationSorteioWidgets({super.key});
+import '../styles/colors_app.dart';
+
+class AnimationSorteioWidget extends StatefulWidget {
+  const AnimationSorteioWidget({super.key});
 
   @override
-  State<AnimationSorteioWidgets> createState() =>
-      _AnimationSorteioWidgetsState();
+  State<AnimationSorteioWidget> createState() => _AnimationSorteioWidgetState();
 }
 
-class _AnimationSorteioWidgetsState extends State<AnimationSorteioWidgets>
+class _AnimationSorteioWidgetState extends State<AnimationSorteioWidget>
     with SingleTickerProviderStateMixin {
   late final AnimationController animation;
 
@@ -20,8 +21,9 @@ class _AnimationSorteioWidgetsState extends State<AnimationSorteioWidgets>
     super.initState();
     animation = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 1),
+      duration: const Duration(milliseconds: 750),
     );
+    flipCard();
   }
 
   @override
@@ -34,6 +36,10 @@ class _AnimationSorteioWidgetsState extends State<AnimationSorteioWidgets>
   flipCard() {
     animation.forward();
     animation.repeat();
+    Timer(const Duration(seconds: 6), () {
+      animation.stop();
+      Navigator.of(context).pushNamed('/result');
+    });
   }
 
   @override
@@ -47,6 +53,7 @@ class _AnimationSorteioWidgetsState extends State<AnimationSorteioWidgets>
             ..rotateY(angulo);
 
           return Scaffold(
+            backgroundColor: Colors.white.withOpacity(0.9),
             body: GestureDetector(
               onTap: () => flipCard(),
               child: Transform(
@@ -56,9 +63,9 @@ class _AnimationSorteioWidgetsState extends State<AnimationSorteioWidgets>
                   child: Container(
                     height: 700,
                     width: 500,
-                    decoration: const BoxDecoration(
-                      color: Color(0xFFe2f2f7),
-                      borderRadius: BorderRadius.all(Radius.circular(35)),
+                    decoration: BoxDecoration(
+                      color: context.colors.primary,
+                      borderRadius: const BorderRadius.all(Radius.circular(35)),
                     ),
                     child: const Center(
                       child: Text(
