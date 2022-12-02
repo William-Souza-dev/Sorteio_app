@@ -64,7 +64,7 @@ class _AnimationSorteioWidgetState extends State<AnimationSorteioWidget>
                     height: 700,
                     width: 500,
                     decoration: BoxDecoration(
-                      color: context.colors.primary,
+                      color: context.colors.secondary,
                       borderRadius: const BorderRadius.all(Radius.circular(35)),
                     ),
                     child: const Center(

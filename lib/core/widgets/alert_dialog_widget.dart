@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'package:sorteio_app/core/widgets/radio_list_tile_widget.dart';
+
 import '../styles/colors_app.dart';
-import 'package:sorteio_app/core/widgets/checkbox_widget.dart';
 
 class AlertDialogWidget extends StatefulWidget {
   const AlertDialogWidget({super.key});
@@ -48,10 +49,7 @@ class _AlertDialogWidgetState extends State<AlertDialogWidget> {
               height: 100,
               child: Column(
                 children: const [
-                  CheckboxWidget(
-                    title: 'Pendente',
-                  ),
-                  CheckboxWidget(title: 'Confirmado')
+                  RadioListTileWidget(),
                 ],
               ),
             ),
