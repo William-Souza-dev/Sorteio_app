@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../core/widgets/animation_sorteio_widget.dart';
+import '../../core/widgets/animation_sorteio_widget.dart';
 
 class AnimationPage extends StatefulWidget {
   const AnimationPage({super.key});

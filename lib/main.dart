@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'package:sorteio_app/pages/animation_page.dart';
-import 'package:sorteio_app/pages/home_page.dart';
-import 'package:sorteio_app/pages/result_page.dart';
-import 'package:sorteio_app/pages/splash_page.dart';
+import 'package:sorteio_app/pages/animation/animation_page.dart';
+import 'package:sorteio_app/pages/home/home_page.dart';
+import 'package:sorteio_app/pages/result/result_page.dart';
+import 'package:sorteio_app/pages/splash/splash_page.dart';
 
 void main() {
   runApp(const MyApp());

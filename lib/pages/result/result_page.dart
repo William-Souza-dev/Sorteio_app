@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../core/styles/colors_app.dart';
+import '../../core/styles/colors_app.dart';
 
 class ResultPage extends StatelessWidget {
   const ResultPage({super.key});
