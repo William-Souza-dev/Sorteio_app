@@ -27,8 +27,8 @@ class _AlertDialogWidgetState extends State<AlertDialogWidget> {
   void _nome() {
     setState(() {
       String? nome;
-      if (nome == nome?.isEmpty) {
-        _infotext = '$nome';
+      if (nome == nome?.isNotEmpty) {
+        _infotext = ' b $nome';
       }
       print(_infotext);
     });
@@ -85,7 +85,6 @@ class _AlertDialogWidgetState extends State<AlertDialogWidget> {
                     if (value!.isEmpty) {
                       return "Informe o nome";
                     }
-                    return null;
                   },
                   decoration: const InputDecoration(
                     labelText: 'Informe o nome',
