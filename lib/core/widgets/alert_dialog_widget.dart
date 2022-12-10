@@ -12,25 +12,21 @@ class AlertDialogWidget extends StatefulWidget {
 }
 
 class _AlertDialogWidgetState extends State<AlertDialogWidget> {
-  final TextEditingController nomeParticipante = TextEditingController();
+  final TextEditingController _inputController = TextEditingController();
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  String _infotext = "Informe o Nome";
+  String _infoText = "Informe o Nome";
 
-  void _resetar() {
-    nomeParticipante.text = '';
+  void _cleanInputAndName() {
     setState(() {
-      _infotext = "Informe o Nome";
+      _infoText = "Informe o Nome";
+      _inputController.clear();
       _formKey = GlobalKey<FormState>();
     });
   }
 
-  void _nome() {
+  void _addName() {
     setState(() {
-      String? nome;
-      if (nome == nome?.isNotEmpty) {
-        _infotext = ' b $nome';
-      }
-      print(_infotext);
+      _infoText = _inputController.text;
     });
   }
 
@@ -63,7 +59,7 @@ class _AlertDialogWidgetState extends State<AlertDialogWidget> {
                   height: 100,
                   child: Center(
                       child: Text(
-                    _infotext,
+                    _infoText,
                     style: const TextStyle(fontSize: 30),
                   )),
                 ),
@@ -80,11 +76,12 @@ class _AlertDialogWidgetState extends State<AlertDialogWidget> {
               Padding(
                 padding: const EdgeInsets.only(top: 30.0),
                 child: TextFormField(
-                  controller: nomeParticipante,
+                  controller: _inputController,
                   validator: (value) {
                     if (value!.isEmpty) {
                       return "Informe o nome";
                     }
+                    return null;
                   },
                   decoration: const InputDecoration(
                     labelText: 'Informe o nome',
@@ -104,13 +101,13 @@ class _AlertDialogWidgetState extends State<AlertDialogWidget> {
               MaterialButton(
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
-                    _nome();
+                    _addName();
                   }
                 },
                 child: const Text("Adicionar"),
               ),
               MaterialButton(
-                onPressed: _resetar,
+                onPressed: _cleanInputAndName,
                 child: const Text("Excluir"),
               ),
             ],
