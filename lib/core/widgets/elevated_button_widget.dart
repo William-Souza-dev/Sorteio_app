@@ -31,7 +31,7 @@ class _ElevatedButtonWidgetState extends State<ElevatedButtonWidget> {
                 Navigator.of(context).push(
                   PageRouteBuilder(
                     opaque: false, // set to false
-                    pageBuilder: (_, __, ___) => AnimationSorteioWidget(),
+                    pageBuilder: (_, __, ___) => const AnimationSorteioWidget(),
                   ),
                 );
               },

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../styles/colors_app.dart';
-
 class RadioListTileWidget extends StatefulWidget {
   const RadioListTileWidget({
     super.key,
@@ -14,7 +12,7 @@ class RadioListTileWidget extends StatefulWidget {
 class _RadioListTileWidgetState extends State<RadioListTileWidget> {
   //bool _isRadioSelected = false;
   int _groupvalue = 0;
- 
+
   @override
   Widget build(BuildContext context) {
     return Center(

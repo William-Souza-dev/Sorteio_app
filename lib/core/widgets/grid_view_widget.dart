@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'package:sorteio_app/pages/home/home_page.dart';
+import 'package:sorteio_app/pages/home/view/home_view.dart';
+
 import '../styles/colors_app.dart';
 
 import 'alert_dialog_widget.dart';
@@ -12,6 +15,8 @@ class GridViewWidget extends StatefulWidget {
 }
 
 class _GridViewWidgetState extends State<GridViewWidget> {
+  final homeview = HomeView();
+
   void _showDialog() {
     showDialog(
         context: context,
@@ -35,18 +40,29 @@ class _GridViewWidgetState extends State<GridViewWidget> {
                 onTap: () {
                   _showDialog();
                 },
-                child: Container(
-                  width: 5,
-                  height: 5,
-                  decoration: BoxDecoration(
-                    borderRadius: const BorderRadius.all(Radius.circular(16)),
-                    color: context.colors.primary,
-                  ),
-                  child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text('${index + 1}'),
-                      ]),
+                child: AnimatedBuilder(
+                  animation: homeview,
+                  builder: (BuildContext context, Widget? child) {
+                    //Posteriormente Mudar as cores do Grid
+                    return Container(
+                      width: 5,
+                      height: 5,
+                      decoration: BoxDecoration(
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(16)),
+                        color: homeview == 0
+                            ? context.colors.quartuario
+                            : homeview == 1
+                                ? context.colors.secondary
+                                : context.colors.primary,
+                      ),
+                      child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text('${index + 1}'),
+                          ]),
+                    );
+                  },
                 ),
               );
             }),

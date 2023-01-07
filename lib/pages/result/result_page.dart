@@ -28,7 +28,7 @@ class ResultPage extends StatelessWidget {
                     child: Column(
                       children: [
                         Padding(
-                          padding: EdgeInsets.only(top: 40.0),
+                          padding: const EdgeInsets.only(top: 40.0),
                           child: Text(
                             "N° 6",
                             style: TextStyle(
@@ -53,7 +53,7 @@ class ResultPage extends StatelessWidget {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.only(top: 15.0),
+                          padding: const EdgeInsets.only(top: 15.0),
                           child: Text('1° Colocado',
                               style: TextStyle(
                                   color: context.colors.sextuary,
@@ -73,7 +73,7 @@ class ResultPage extends StatelessWidget {
                     child: Column(
                       children: [
                         Padding(
-                          padding: EdgeInsets.only(top: 40.0),
+                          padding: const EdgeInsets.only(top: 40.0),
                           child: Text(
                             "N° 6",
                             style: TextStyle(
@@ -98,7 +98,7 @@ class ResultPage extends StatelessWidget {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.only(top: 15.0),
+                          padding: const EdgeInsets.only(top: 15.0),
                           child: Text(
                             '2° Colocado',
                             style: TextStyle(

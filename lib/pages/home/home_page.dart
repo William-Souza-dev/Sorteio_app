@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../core/styles/colors_app.dart';
 import '../../core/widgets/elevated_button_widget.dart';
 import '../../core/widgets/grid_view_widget.dart';
 

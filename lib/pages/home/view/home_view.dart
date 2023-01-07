@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'package:sorteio_app/core/styles/colors_app.dart';
 
-abstract class HomeView extends ChangeNotifier {
+class HomeView extends ChangeNotifier {
   void confirmed() {
+    notifyListeners();
     bool confirmed = false;
     if (confirmed == true) {
       ColorsApp.i.secondary;
@@ -11,6 +12,7 @@ abstract class HomeView extends ChangeNotifier {
   }
 
   void pending() {
+    notifyListeners();
     bool confirmed = false;
     if (confirmed == true) {
       ColorsApp.i.quartuario;
