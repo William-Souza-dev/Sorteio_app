@@ -103,6 +103,7 @@ class _AlertDialogWidgetState extends State<AlertDialogWidget> {
                   if (_formKey.currentState!.validate()) {
                     _addName();
                   }
+                  Navigator.pop(context);
                 },
                 child: const Text("Adicionar"),
               ),

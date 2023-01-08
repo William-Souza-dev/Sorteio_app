@@ -3,21 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:sorteio_app/core/styles/colors_app.dart';
 
 class HomeView extends ChangeNotifier {
-  void confirmed() {
-    notifyListeners();
-    int confirmed = 0;
-    if (confirmed == 0) {
-      ColorsApp.i.secondary;
-    }
-  }
+  Color _color = ColorsApp.i.primary;
 
-  void pending() {
-    notifyListeners();
-    int pending = 1;
-    if (pending == 1) {
-      ColorsApp.i.quartuario;
-    }
-  }
+  Color get color => _color;
 
-  void gridViewIndex() {}
+  set color(Color? newColor) {
+    _color = newColor!;
+    notifyListeners();
+  }
 }

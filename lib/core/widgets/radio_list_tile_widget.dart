@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'package:sorteio_app/core/styles/colors_app.dart';
+import 'package:sorteio_app/pages/home/view/home_view.dart';
+
 class RadioListTileWidget extends StatefulWidget {
   const RadioListTileWidget({
     super.key,
@@ -11,7 +14,7 @@ class RadioListTileWidget extends StatefulWidget {
 
 class _RadioListTileWidgetState extends State<RadioListTileWidget> {
   //bool _isRadioSelected = false;
-  int _groupvalue = 0;
+  final HomeView _homeview = HomeView();
 
   @override
   Widget build(BuildContext context) {
@@ -23,9 +26,13 @@ class _RadioListTileWidgetState extends State<RadioListTileWidget> {
             children: [
               const Text('Pendente'),
               Radio(
-                value: 0,
-                groupValue: _groupvalue,
-                onChanged: hadleRadio,
+                value: context.colors.quartuario,
+                groupValue: _homeview.color,
+                onChanged: ((value) {
+                  setState(() {
+                    _homeview.color = value;
+                  });
+                }),
               )
             ],
           ),
@@ -34,21 +41,18 @@ class _RadioListTileWidgetState extends State<RadioListTileWidget> {
             children: [
               const Text('Confirmado'),
               Radio(
-                value: 1,
-                groupValue: _groupvalue,
-                onChanged: hadleRadio,
+                value: context.colors.secondary,
+                groupValue: _homeview.color,
+                onChanged: (value) {
+                  setState(() {
+                    _homeview.color = value;
+                  });
+                },
               )
             ],
           ),
         ],
       ),
     );
-  }
-
-  void hadleRadio(int? value) {
-    print(value);
-    setState(() {
-      _groupvalue = value!;
-    });
   }
 }
