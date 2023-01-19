@@ -4,8 +4,10 @@ import 'package:sorteio_app/core/styles/colors_app.dart';
 import 'package:sorteio_app/pages/home/view/home_view.dart';
 
 class RadioListTileWidget extends StatefulWidget {
+  final Function callback;
   const RadioListTileWidget({
     super.key,
+    required this.callback,
   });
 
   @override
@@ -13,8 +15,7 @@ class RadioListTileWidget extends StatefulWidget {
 }
 
 class _RadioListTileWidgetState extends State<RadioListTileWidget> {
-  //bool _isRadioSelected = false;
-  final HomeView _homeview = HomeView();
+  HomeView _homeview = HomeView();
 
   @override
   Widget build(BuildContext context) {
@@ -26,11 +27,15 @@ class _RadioListTileWidgetState extends State<RadioListTileWidget> {
             children: [
               const Text('Pendente'),
               Radio(
-                value: context.colors.quartuario,
+                value: ColorsApp.i.quartuario,
                 groupValue: _homeview.color,
                 onChanged: ((value) {
+                  print('cor antes da atualização ${_homeview.color}');
                   setState(() {
                     _homeview.color = value;
+                    _homeview.notifyListeners();
+                    widget.callback();
+                    print('depois da atualização_${_homeview.color}');
                   });
                 }),
               )
@@ -41,11 +46,16 @@ class _RadioListTileWidgetState extends State<RadioListTileWidget> {
             children: [
               const Text('Confirmado'),
               Radio(
-                value: context.colors.secondary,
+                value: ColorsApp.i.secondary,
                 groupValue: _homeview.color,
                 onChanged: (value) {
+                  print('cor antes da atualização ${_homeview.color}');
                   setState(() {
                     _homeview.color = value;
+                    _homeview.notifyListeners();
+
+                    widget.callback();
+                    print('depois da atualização_${_homeview.color}');
                   });
                 },
               )

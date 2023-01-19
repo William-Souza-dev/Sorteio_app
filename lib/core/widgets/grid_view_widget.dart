@@ -3,29 +3,45 @@ import 'package:flutter/material.dart';
 import 'package:sorteio_app/pages/home/view/home_view.dart';
 import 'package:sorteio_app/repository/item_repository.dart';
 
+import '../styles/colors_app.dart';
+
 import 'alert_dialog_widget.dart';
 
 class GridViewWidget extends StatefulWidget {
-  const GridViewWidget({super.key});
+  final HomeView homeView;
+  const GridViewWidget(
+      {super.key, required this.homeView, required void Function() callback})
+      : assert(homeView != null);
 
   @override
   State<GridViewWidget> createState() => _GridViewWidgetState();
 }
 
 class _GridViewWidgetState extends State<GridViewWidget> {
-  final HomeView _homeview = HomeView();
+  @override
+  void initState() {
+    super.initState();
+    widget.homeView.addListener(_onColorChanged);
+  }
+
+  void _onColorChanged() {
+    setState(() {});
+  }
 
   void _showDialog() {
     showDialog(
         context: context,
         builder: (context) {
-          return const AlertDialogWidget();
+          return AlertDialogWidget(
+            callback: () {
+              setState(() {});
+            },
+          );
         });
   }
 
   @override
   Widget build(BuildContext context) {
-    _homeview.addListener(() {});
     return Center(
       child: SizedBox(
         height: 830,
@@ -40,14 +56,14 @@ class _GridViewWidgetState extends State<GridViewWidget> {
                 _showDialog();
               },
               child: AnimatedBuilder(
-                animation: _homeview,
+                animation: widget.homeView,
                 builder: (BuildContext context, Widget? child) {
                   return Container(
                     width: 5,
                     height: 5,
                     decoration: BoxDecoration(
                       borderRadius: const BorderRadius.all(Radius.circular(16)),
-                      color: _homeview.color,
+                      color: widget.homeView.color,
                     ),
                     child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,

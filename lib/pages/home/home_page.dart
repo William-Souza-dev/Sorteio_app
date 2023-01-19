@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:sorteio_app/pages/home/view/home_view.dart';
+
 import '../../core/widgets/elevated_button_widget.dart';
 import '../../core/widgets/grid_view_widget.dart';
 
@@ -11,6 +13,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  HomeView _homeview = HomeView();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,7 +77,8 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
-                const GridViewWidget(),
+                GridViewWidget(
+                    homeView: _homeview, callback: () => setState(() {})),
               ],
             ),
           ),

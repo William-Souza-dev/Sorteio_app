@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
 import 'package:sorteio_app/core/widgets/radio_list_tile_widget.dart';
+import 'package:sorteio_app/pages/home/view/home_view.dart';
 
 import '../styles/colors_app.dart';
 
 class AlertDialogWidget extends StatefulWidget {
-  const AlertDialogWidget({super.key});
+  final VoidCallback callback;
+  const AlertDialogWidget({super.key, required this.callback});
 
   @override
   State<AlertDialogWidget> createState() => _AlertDialogWidgetState();
@@ -68,8 +70,10 @@ class _AlertDialogWidgetState extends State<AlertDialogWidget> {
                 width: MediaQuery.of(context).size.width,
                 height: 100,
                 child: Column(
-                  children: const [
-                    RadioListTileWidget(),
+                  children: [
+                    RadioListTileWidget(
+                      callback: widget.callback,
+                    ),
                   ],
                 ),
               ),
@@ -104,6 +108,8 @@ class _AlertDialogWidgetState extends State<AlertDialogWidget> {
                     _addName();
                   }
                   Navigator.pop(context);
+                  widget.callback();
+                  print(widget.callback);
                 },
                 child: const Text("Adicionar"),
               ),
