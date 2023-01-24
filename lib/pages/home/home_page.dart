@@ -13,7 +13,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  HomeView _homeview = HomeView();
+  HomeView _homeView = HomeView();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -78,7 +78,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 GridViewWidget(
-                    homeView: _homeview, callback: () => setState(() {})),
+                    homeView: _homeView, callback: () => setState(() {})),
               ],
             ),
           ),

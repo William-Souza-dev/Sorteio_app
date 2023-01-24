@@ -43,40 +43,42 @@ class _GridViewWidgetState extends State<GridViewWidget> {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: SizedBox(
-        height: 830,
-        width: 830,
-        child: GridView.builder(
-          itemCount: 100,
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisSpacing: 5, mainAxisSpacing: 5, crossAxisCount: 10),
-          itemBuilder: (context, index) {
-            return InkWell(
+        child: SizedBox(
+      height: 830,
+      width: 830,
+      child: GridView.builder(
+        itemCount: 100,
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisSpacing: 5, mainAxisSpacing: 5, crossAxisCount: 10),
+        itemBuilder: (context, index) {
+          return InkWell(
               onTap: () {
                 _showDialog();
               },
-              child: AnimatedBuilder(
-                animation: widget.homeView,
-                builder: (BuildContext context, Widget? child) {
-                  return Container(
-                    width: 5,
-                    height: 5,
-                    decoration: BoxDecoration(
-                      borderRadius: const BorderRadius.all(Radius.circular(16)),
-                      color: widget.homeView.color,
-                    ),
-                    child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text('${index + 1}'),
-                        ]),
-                  );
-                },
-              ),
-            );
-          },
-        ),
+              child:
+                  // AnimatedBuilder(
+                  //animation: widget.homeView,
+                  //builder: (BuildContext context, Widget? child) {
+                  // return
+                  Container(
+                width: 5,
+                height: 5,
+                decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.all(Radius.circular(16)),
+                  color: widget.homeView.color,
+                ),
+                child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('${index + 1}'),
+                    ]),
+              ));
+        },
       ),
-    );
+    ));
   }
+  //),
+  // ),
+  //);
+
 }

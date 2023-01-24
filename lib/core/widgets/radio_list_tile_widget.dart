@@ -15,7 +15,12 @@ class RadioListTileWidget extends StatefulWidget {
 }
 
 class _RadioListTileWidgetState extends State<RadioListTileWidget> {
-  HomeView _homeview = HomeView();
+  late HomeView _homeView;
+  @override
+  void initState() {
+    super.initState();
+    _homeView = HomeView();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,14 +33,14 @@ class _RadioListTileWidgetState extends State<RadioListTileWidget> {
               const Text('Pendente'),
               Radio(
                 value: ColorsApp.i.quartuario,
-                groupValue: _homeview.color,
+                groupValue: _homeView.color,
                 onChanged: ((value) {
-                  print('cor antes da atualização ${_homeview.color}');
+                  print('cor antes da atualização ${_homeView.color}');
                   setState(() {
-                    _homeview.color = value;
-                    _homeview.notifyListeners();
+                    _homeView.color = value;
+                    _homeView.notifyListeners();
                     widget.callback();
-                    print('depois da atualização_${_homeview.color}');
+                    print('depois da atualização_${_homeView.color}');
                   });
                 }),
               )
@@ -47,15 +52,14 @@ class _RadioListTileWidgetState extends State<RadioListTileWidget> {
               const Text('Confirmado'),
               Radio(
                 value: ColorsApp.i.secondary,
-                groupValue: _homeview.color,
+                groupValue: _homeView.color,
                 onChanged: (value) {
-                  print('cor antes da atualização ${_homeview.color}');
+                  print('cor antes da atualização ${_homeView.color}');
                   setState(() {
-                    _homeview.color = value;
-                    _homeview.notifyListeners();
-
+                    _homeView.color = value;
+                    _homeView.notifyListeners();
                     widget.callback();
-                    print('depois da atualização_${_homeview.color}');
+                    print('depois da atualização_${_homeView.color}');
                   });
                 },
               )
