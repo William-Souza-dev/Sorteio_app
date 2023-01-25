@@ -18,7 +18,7 @@ class GridViewWidget extends StatefulWidget {
 }
 
 class _GridViewWidgetState extends State<GridViewWidget> {
-  //late Color _color;
+  int selectedIndex = -1;
 
   @override
   void initState() {
@@ -27,12 +27,11 @@ class _GridViewWidgetState extends State<GridViewWidget> {
   }
 
   void _onColorChanged() {
-    setState(() {
-      //_color = widget.homeView.color;
-    });
+    setState(() {});
   }
 
-  void _showDialog() {
+  void _showDialog(int index) {
+    selectedIndex = index;
     showDialog(
         context: context,
         builder: (context) {
@@ -58,19 +57,16 @@ class _GridViewWidgetState extends State<GridViewWidget> {
         itemBuilder: (context, index) {
           return InkWell(
               onTap: () {
-                _showDialog();
+                _showDialog(index);
               },
-              child:
-                  // AnimatedBuilder(
-                  //animation: widget.homeView,
-                  //builder: (BuildContext context, Widget? child) {
-                  // return
-                  Container(
+              child: Container(
                 width: 5,
                 height: 5,
                 decoration: BoxDecoration(
                   borderRadius: const BorderRadius.all(Radius.circular(16)),
-                  color: widget.homeView.color,
+                  color: (selectedIndex == index)
+                      ? widget.homeView.color
+                      : context.colors.primary,
                 ),
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -82,8 +78,4 @@ class _GridViewWidgetState extends State<GridViewWidget> {
       ),
     ));
   }
-  //),
-  // ),
-  //);
-
 }
