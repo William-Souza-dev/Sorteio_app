@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:sorteio_app/pages/home/view/home_view.dart';
-import 'package:sorteio_app/repository/item_repository.dart';
 
 import '../styles/colors_app.dart';
 
@@ -18,7 +17,7 @@ class GridViewWidget extends StatefulWidget {
 }
 
 class _GridViewWidgetState extends State<GridViewWidget> {
-  int selectedIndex = -1;
+  int _selectedIndex = -1;
 
   @override
   void initState() {
@@ -31,13 +30,15 @@ class _GridViewWidgetState extends State<GridViewWidget> {
   }
 
   void _showDialog(int index) {
-    selectedIndex = index;
+    _selectedIndex = index;
     showDialog(
         context: context,
         builder: (context) {
           return AlertDialogWidget(
             callback: () {
-              setState(() {});
+              setState(() {
+                _selectedIndex = index;
+              });
             },
             homeView: widget.homeView,
           );
@@ -64,7 +65,7 @@ class _GridViewWidgetState extends State<GridViewWidget> {
                 height: 5,
                 decoration: BoxDecoration(
                   borderRadius: const BorderRadius.all(Radius.circular(16)),
-                  color: (selectedIndex == index)
+                  color: (_selectedIndex == index)
                       ? widget.homeView.color
                       : context.colors.primary,
                 ),

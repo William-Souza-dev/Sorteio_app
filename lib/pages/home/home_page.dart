@@ -13,7 +13,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  HomeView _homeView = HomeView();
+  final HomeView _homeView = HomeView();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
