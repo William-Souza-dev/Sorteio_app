@@ -6,8 +6,10 @@ import 'package:sorteio_app/pages/home/view/home_view.dart';
 import '../styles/colors_app.dart';
 
 class AlertDialogWidget extends StatefulWidget {
+  final HomeView homeView;
   final VoidCallback callback;
-  const AlertDialogWidget({super.key, required this.callback});
+  const AlertDialogWidget(
+      {super.key, required this.callback, required this.homeView});
 
   @override
   State<AlertDialogWidget> createState() => _AlertDialogWidgetState();
@@ -73,6 +75,7 @@ class _AlertDialogWidgetState extends State<AlertDialogWidget> {
                   children: [
                     RadioListTileWidget(
                       callback: widget.callback,
+                      homeView: widget.homeView,
                     ),
                   ],
                 ),

@@ -4,10 +4,12 @@ import 'package:sorteio_app/core/styles/colors_app.dart';
 import 'package:sorteio_app/pages/home/view/home_view.dart';
 
 class RadioListTileWidget extends StatefulWidget {
+  final HomeView homeView;
   final Function callback;
   const RadioListTileWidget({
     super.key,
     required this.callback,
+    required this.homeView,
   });
 
   @override
@@ -15,13 +17,6 @@ class RadioListTileWidget extends StatefulWidget {
 }
 
 class _RadioListTileWidgetState extends State<RadioListTileWidget> {
-  late HomeView _homeView;
-  @override
-  void initState() {
-    super.initState();
-    _homeView = HomeView();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -33,14 +28,14 @@ class _RadioListTileWidgetState extends State<RadioListTileWidget> {
               const Text('Pendente'),
               Radio(
                 value: ColorsApp.i.quartuario,
-                groupValue: _homeView.color,
+                groupValue: widget.homeView.color,
                 onChanged: ((value) {
-                  print('cor antes da atualização ${_homeView.color}');
+                  print('cor antes da atualização ${widget.homeView.color}');
                   setState(() {
-                    _homeView.color = value;
-                    _homeView.notifyListeners();
+                    widget.homeView.color = value;
+                    widget.homeView.notifyListeners();
                     widget.callback();
-                    print('depois da atualização_${_homeView.color}');
+                    print('depois da atualização_${widget.homeView.color}');
                   });
                 }),
               )
@@ -52,14 +47,14 @@ class _RadioListTileWidgetState extends State<RadioListTileWidget> {
               const Text('Confirmado'),
               Radio(
                 value: ColorsApp.i.secondary,
-                groupValue: _homeView.color,
+                groupValue: widget.homeView.color,
                 onChanged: (value) {
-                  print('cor antes da atualização ${_homeView.color}');
+                  print('cor antes da atualização ${widget.homeView.color}');
                   setState(() {
-                    _homeView.color = value;
-                    _homeView.notifyListeners();
+                    widget.homeView.color = value;
+                    widget.homeView.notifyListeners();
                     widget.callback();
-                    print('depois da atualização_${_homeView.color}');
+                    print('depois da atualização_${widget.homeView.color}');
                   });
                 },
               )

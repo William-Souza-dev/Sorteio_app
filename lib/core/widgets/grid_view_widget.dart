@@ -18,6 +18,8 @@ class GridViewWidget extends StatefulWidget {
 }
 
 class _GridViewWidgetState extends State<GridViewWidget> {
+  //late Color _color;
+
   @override
   void initState() {
     super.initState();
@@ -25,7 +27,9 @@ class _GridViewWidgetState extends State<GridViewWidget> {
   }
 
   void _onColorChanged() {
-    setState(() {});
+    setState(() {
+      //_color = widget.homeView.color;
+    });
   }
 
   void _showDialog() {
@@ -36,6 +40,7 @@ class _GridViewWidgetState extends State<GridViewWidget> {
             callback: () {
               setState(() {});
             },
+            homeView: widget.homeView,
           );
         });
   }
