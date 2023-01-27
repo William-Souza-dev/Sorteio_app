@@ -112,7 +112,6 @@ class _AlertDialogWidgetState extends State<AlertDialogWidget> {
                   }
                   Navigator.pop(context);
                   widget.callback();
-                  print(widget.callback);
                 },
                 child: const Text("Adicionar"),
               ),

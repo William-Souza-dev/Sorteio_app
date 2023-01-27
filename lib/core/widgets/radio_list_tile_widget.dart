@@ -30,12 +30,9 @@ class _RadioListTileWidgetState extends State<RadioListTileWidget> {
                 value: ColorsApp.i.quartuario,
                 groupValue: widget.homeView.color,
                 onChanged: ((value) {
-                  print('cor antes da atualização ${widget.homeView.color}');
                   setState(() {
                     widget.homeView.color = value;
-                    widget.homeView.notifyListeners();
                     widget.callback();
-                    print('depois da atualização_${widget.homeView.color}');
                   });
                 }),
               )
@@ -49,12 +46,9 @@ class _RadioListTileWidgetState extends State<RadioListTileWidget> {
                 value: ColorsApp.i.secondary,
                 groupValue: widget.homeView.color,
                 onChanged: (value) {
-                  print('cor antes da atualização ${widget.homeView.color}');
                   setState(() {
                     widget.homeView.color = value;
-                    widget.homeView.notifyListeners();
                     widget.callback();
-                    print('depois da atualização_${widget.homeView.color}');
                   });
                 },
               )
