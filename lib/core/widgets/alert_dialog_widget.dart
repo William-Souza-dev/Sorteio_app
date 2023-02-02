@@ -52,7 +52,7 @@ class _AlertDialogWidgetState extends State<AlertDialogWidget> {
               const Padding(
                 padding: EdgeInsets.only(top: 25.0),
                 child: Text(
-                  "N° 6",
+                  "N° 7",
                   style: TextStyle(fontSize: 50),
                 ),
               ),
